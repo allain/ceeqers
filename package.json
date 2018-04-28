@@ -1,0 +1,29 @@
+{
+  "name": "ceeqers",
+  "version": "0.1.0",
+  "description": "A playground for trying out CQRS ideas ",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "test:watch": "jest --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/allain/ceeqers.git"
+  },
+  "keywords": [
+    "CRQS"
+  ],
+  "author": "Allain Lalonde <allain.lalonde@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/allain/ceeqers/issues"
+  },
+  "homepage": "https://github.com/allain/ceeqers#readme",
+  "devDependencies": {
+    "jest": "^22.4.3"
+  },
+  "dependencies": {
+    "nanoevents": "^1.0.2"
+  }
+}
