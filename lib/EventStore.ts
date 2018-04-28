@@ -10,7 +10,8 @@ const pEach = fn => async arr => {
 export type EventPredicate = (Event) => boolean
 
 export interface Backend {
-  append(event: Event): Promise<any>
+  recordEvent(event: Event): Promise<any>
+  deleteAllEvents(): Promise<any>
   filter(fn: EventPredicate): Promise<Event[]>
 }
 
@@ -32,8 +33,9 @@ class EventStore {
   constructor(opts: EventStoreOptions = {}) {
     this.backend = opts.backend || new MemoryBackend()
   }
+
   async append(event: Event) {
-    await this.backend.append(event)
+    await this.backend.recordEvent(event)
 
     this.emitter.emit('changed')
     this.emitter.emit(event.type, event)

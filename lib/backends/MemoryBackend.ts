@@ -7,8 +7,12 @@ export default class MemoryBackend implements Backend {
     this.events = []
   }
 
-  async append(event: Event) {
+  async recordEvent(event: Event) {
     this.events.push(event)
+  }
+
+  async deleteAllEvents() {
+    this.events = []
   }
 
   async filter(fn: EventPredicate) {
